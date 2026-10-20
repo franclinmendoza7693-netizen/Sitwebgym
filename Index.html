@@ -47,11 +47,59 @@
 <main>
 
 <!-- [P1-2] Portada (hero) con contadores -->
-<!-- pega aquí el contenido de P1-2 -->
+<section class="hero" id="inicio">
+ <div class="wrap">
+  <span class="eyebrow">Gimnasio en Trujillo</span>
+  <h1>Tu mejor versión <em>empieza hoy</em></h1>
+  <p>El gimnasio más completo de Trujillo. Equipos de última generación, entrenadores certificados y una comunidad que te empuja a no rendirte.</p>
+  <div class="cta">
+   <a href="#planes" class="btn btn-gold">¡Inscríbete Hoy!</a>
+   <a href="#reserva" class="btn btn-ghost">Clase de prueba</a>
+  </div>
+  <div class="stats">
+   <div><b data-count="1200" data-prefix="+">+1,200</b><small>Socios activos</small></div>
+   <div><b data-count="12">12</b><small>Entrenadores certificados</small></div>
+   <div><b data-count="1000" data-prefix="+" data-suffix=" m²">+1,000 m²</b><small>De instalaciones</small></div>
+   <div><b>6 a.m.–10 p.m.</b><small>Lunes a viernes</small></div>
+  </div>
+ </div>
+</section>
 <!-- [/P1-2] -->
 
 <!-- [P1-3] Calculadora de IMC -->
-<!-- pega aquí el contenido de P1-3 -->
+<section class="alt" id="imc">
+ <div class="wrap imc-grid">
+  <div class="rv">
+   <span class="eyebrow">Tu punto de partida</span>
+   <h2>Calcula tu <em>IMC</em></h2>
+   <p class="lead">Ingresa tu peso y tu estatura y te sugerimos por dónde empezar. Es solo una referencia general, no un diagnóstico: en tu evaluación física lo medimos con más detalle.</p>
+  </div>
+  <form class="imc-card rv" id="imcForm" novalidate>
+   <div class="row">
+    <label>Peso (kg)
+     <input type="number" id="imcPeso" min="30" max="300" step="0.1" inputmode="decimal" placeholder="Ej. 70">
+    </label>
+    <label>Estatura (cm)
+     <input type="number" id="imcAlt" min="100" max="250" step="1" inputmode="numeric" placeholder="Ej. 170">
+    </label>
+   </div>
+   <button class="btn btn-gold" type="submit">Calcular</button>
+   <p class="imc-err" id="imcErr" role="alert"></p>
+   <div class="imc-out" id="imcOut" aria-live="polite" hidden>
+    <div class="imc-top">
+     <span class="imc-num" id="imcNum">0</span>
+     <span class="imc-cat" id="imcCat"></span>
+    </div>
+    <div class="imc-bar" aria-hidden="true"><span class="imc-pin" id="imcPin"></span></div>
+    <div class="imc-scale" aria-hidden="true">
+     <span style="--p:0%">15</span><span style="--p:14%">18.5</span><span style="--p:40%">25</span><span style="--p:60%">30</span><span style="--p:100%">40</span>
+    </div>
+    <p id="imcTip"></p>
+    <a href="#planes" class="btn btn-ghost">Ver planes</a>
+   </div>
+  </form>
+ </div>
+</section>
 <!-- [/P1-3] -->
 
 <!-- [P2-1] Nosotros -->
