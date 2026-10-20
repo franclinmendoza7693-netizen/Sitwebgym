@@ -171,13 +171,97 @@
   </div>
  </div>
 </section>
-
 <!-- [P2-3] Clases grupales con pestañas por día -->
-<!-- pega aquí el contenido de P2-3 -->
+<section id="clases">
+ <div class="wrap">
+  <div class="head rv">
+   <span class="eyebrow">Horario semanal</span>
+   <h2>Clases <em>grupales</em></h2>
+   <p class="lead">Elige un día y mira qué clases hay. Horario de ejemplo: ajústalo al real del gimnasio.</p>
+  </div>
+  <div class="tabs rv" role="tablist" aria-label="Días de la semana" id="diasTabs">
+   <button class="tab" role="tab" type="button" data-dia="1" aria-selected="false">Lun</button>
+   <button class="tab" role="tab" type="button" data-dia="2" aria-selected="false">Mar</button>
+   <button class="tab" role="tab" type="button" data-dia="3" aria-selected="false">Mié</button>
+   <button class="tab" role="tab" type="button" data-dia="4" aria-selected="false">Jue</button>
+   <button class="tab" role="tab" type="button" data-dia="5" aria-selected="false">Vie</button>
+   <button class="tab" role="tab" type="button" data-dia="6" aria-selected="false">Sáb</button>
+   <button class="tab" role="tab" type="button" data-dia="0" aria-selected="false">Dom</button>
+  </div>
+  <div class="clases-panel" id="clasesPanel" role="tabpanel" aria-live="polite">
+   <p class="clases-vacio">Selecciona un día para ver las clases.</p>
+  </div>
+ </div>
+</section>
 <!-- [/P2-3] -->
 
 <!-- [P2-4] Planes con ventana de inscripción -->
-<!-- pega aquí el contenido de P2-4 -->
+<section class="alt" id="planes">
+ <div class="wrap">
+  <div class="head rv">
+   <span class="eyebrow">Membresías</span>
+   <h2>Elige tu <em>plan</em></h2>
+   <p class="lead">Sin costo de matrícula. Cuanto más tiempo te comprometes, más ahorras. ¿Dudas? Calcula primero tu <a href="#imc" class="link">IMC</a>.</p>
+  </div>
+  <div class="plans">
+   <article class="plan rv">
+    <h3>Pase Mensual</h3>
+    <div class="price"><small>S/</small> 89</div>
+    <p class="note">por mes</p>
+    <ul>
+     <li>Acceso a todas las instalaciones</li>
+     <li>Rutina inicial con entrenador</li>
+     <li>Clases grupales básicas</li>
+     <li>Casilleros y duchas</li>
+    </ul>
+    <button class="btn btn-ghost" type="button" data-plan="Pase Mensual (S/ 89)">Elegir plan</button>
+   </article>
+   <article class="plan top rv">
+    <span class="tag">Más elegido</span>
+    <h3>Pase Trimestral</h3>
+    <div class="price"><small>S/</small> 219</div>
+    <p class="note">3 meses · equivale a S/ 73 al mes</p>
+    <span class="save">Ahorras S/ 48 frente al mensual</span>
+    <ul>
+     <li>Todo lo del plan mensual</li>
+     <li>Evaluación física y de composición corporal</li>
+     <li>Plan nutricional básico</li>
+     <li>Todas las clases grupales</li>
+     <li>1 pase de invitado al mes</li>
+    </ul>
+    <button class="btn btn-gold" type="button" data-plan="Pase Trimestral (S/ 219)">Elegir plan</button>
+   </article>
+   <article class="plan rv">
+    <h3>Pase Anual</h3>
+    <div class="price"><small>S/</small> 749</div>
+    <p class="note">12 meses · equivale a S/ 62 al mes</p>
+    <span class="save">Ahorras S/ 319 frente al mensual</span>
+    <ul>
+     <li>Todo lo del plan trimestral</li>
+     <li>2 sesiones de entrenamiento personalizado</li>
+     <li>Seguimiento mensual de progreso</li>
+     <li>Congelamiento de membresía hasta 30 días</li>
+     <li>Precio garantizado durante todo el año</li>
+    </ul>
+    <button class="btn btn-ghost" type="button" data-plan="Pase Anual (S/ 749)">Elegir plan</button>
+   </article>
+  </div>
+ </div>
+</section>
+
+<dialog class="dlg" id="planDialog" aria-labelledby="planTitulo">
+ <form id="planForm">
+  <h3 id="planTitulo">Casi listo</h3>
+  <p class="dlg-plan">Plan elegido: <span id="planNombre"></span></p>
+  <label>Tu nombre
+   <input type="text" id="planCliente" maxlength="60" required autocomplete="name" placeholder="Ej. Ana Torres">
+  </label>
+  <div class="dlg-actions">
+   <button class="btn btn-ghost" type="button" id="planCancelar">Cancelar</button>
+   <button class="btn btn-gold" type="submit">Enviar por WhatsApp</button>
+  </div>
+ </form>
+</dialog>
 <!-- [/P2-4] -->
 
 <!-- [P3-1] Preguntas frecuentes -->
