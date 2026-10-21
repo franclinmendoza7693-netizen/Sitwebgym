@@ -332,7 +332,7 @@ Cada integrante escribe su zona con sus propias palabras al terminar sus bloques
 <!-- [P1-DOC] Documentación de la Persona 1 -->
 ### Persona 1 – Base, portada y experiencia
 
-**Responsable:** _(escribe tu nombre)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/base.css`, `js/p1-portada.js` y los bloques P1 de `index.html`.
+**Responsable:** _(Franclin Mendoza)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/base.css`, `js/p1-portada.js` y los bloques P1 de `index.html`.
 
 | Bloque | Qué hace | Cómo funciona |
 |---|---|---|
@@ -348,7 +348,7 @@ Cada integrante escribe su zona con sus propias palabras al terminar sus bloques
 <!-- [P2-DOC] Documentación de la Persona 2 -->
 ### Persona 2 – Contenido del gimnasio
 
-**Responsable:** _(escribe tu nombre)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/contenido.css`, `js/p2-contenido.js` y los bloques P2 de `index.html`.
+**Responsable:** _(Miguel Castillo)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/contenido.css`, `js/p2-contenido.js` y los bloques P2 de `index.html`.
 
 | Bloque | Qué hace | Cómo funciona |
 |---|---|---|
@@ -363,7 +363,7 @@ Cada integrante escribe su zona con sus propias palabras al terminar sus bloques
 <!-- [P3-DOC] Documentación de la Persona 3 -->
 ### Persona 3 – Comunidad y contacto
 
-**Responsable:** _(escribe tu nombre)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/comunidad.css`, `js/p3-comunidad.js` y los bloques P3 de `index.html`.
+**Responsable:** _(Rober Reyes)_ · **Rama:** _(tu rama)_ · **Archivos:** `css/comunidad.css`, `js/p3-comunidad.js` y los bloques P3 de `index.html`.
 
 | Bloque | Qué hace | Cómo funciona |
 |---|---|---|
@@ -485,7 +485,7 @@ GitKraken muestra este aviso **antes** de unir: compara tu rama con la rama dest
 | Mensaje del botón flotante | `js/p3-comunidad.js`, bloque P3-4 |
 | Nombre, dirección, teléfono | `index.html` |
 | Horario de atención (tabla) | `index.html`, bloque P3-3 |
-| Horario para "abierto ahora" | `js/p3-comunidad.js`, objeto `H` (**debe coincidir con la tabla**) |
+| Horario para "abierto ahora" | `js/p3-comunidad.js`, objeto `H`  |
 | Horario de clases | `js/p2-contenido.js`, objeto `HORARIO` |
 | Entrenadores | `index.html`, bloque P2-2 (nombres de ejemplo) |
 | Precios y beneficios | `index.html`, sección `#planes` (el atributo `data-plan` es el texto que se envía) |
@@ -559,13 +559,13 @@ Propuestas para discutir en equipo (ninguna está implementada):
 
 | Integrante | Rol en el proyecto | Rama(s) |
 |---|---|---|
-| _(nombre)_ | Persona 1 – Base, portada y experiencia | _(rama)_ |
-| _(nombre)_ | Persona 2 – Contenido del gimnasio | _(rama)_ |
-| _(nombre)_ | Persona 3 – Comunidad y contacto | _(rama)_ |
+| _(Jorge Franclin Mendoza Pomatanta)_ | Persona 1 – Base, portada y experiencia | _(DevelopF)_ |
+| _(Jose Miguel Castillo Sanchez)_ | Persona 2 – Contenido del gimnasio | _(DevelopM)_ |
+| _(Rober Jesus Reyes Marquina)_ | Persona 3 – Comunidad y contacto | _(DevelopR)_ |
 
 **Contexto:** proyecto de práctica de control de versiones con GitKraken.
-**Profesor:** _(nombre)_ · **Institución / curso:** _(completar)_
+**Profesor:** _(Joel Jara Llajaruna )_ · **Curso:** _(FULLSTACK DEVELOPER SOFTWARE)_
 
 ---
 
-*Última actualización: octubre de 2026.*
+*Última actualización: 21 octubre de 2026.*
