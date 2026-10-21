@@ -1,0 +1,83 @@
+/* ==========================================================
+   comunidad.css  ·  PERSONA 3
+   Preguntas frecuentes, reserva, ubicación, footer y WhatsApp
+   (usa las variables definidas en base.css por la Persona 1)
+   ========================================================== */
+
+/* [P3-1] Preguntas frecuentes */
+.faq{max-width:820px;margin:auto;display:grid;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:8px;transition:border-color .25s}
+.faq details[open]{border-color:var(--gold)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;line-height:1;color:var(--gold-t);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 22px 20px;color:var(--muted)}
+/* [/P3-1] */
+
+/* [P3-2] Reserva de clase de prueba */
+.reserva{background:radial-gradient(circle at 10% 20%,rgba(245,197,24,.12),transparent 45%),var(--bg2);border-block:1px solid var(--line)}
+.reserva-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.rform{background:var(--card);border:1px solid var(--gold);border-radius:var(--r);padding:34px;display:grid;gap:16px}
+.rform .btn{width:100%}
+.fine{color:var(--muted);font-size:.85rem;text-align:center}
+
+@media(max-width:960px){
+ .reserva-grid{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:480px){
+ .rform{padding:24px 20px}
+}
+/* [/P3-2] */
+
+/* [P3-3] Ubicación y horarios */
+.loc-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:stretch}
+.info{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+.info>div{width:100%}
+.info h3{font-size:1.5rem;font-weight:700;color:var(--gold-t);margin-bottom:8px}
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-weight:600;font-size:.95rem}
+.status::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.status.open::before{background:var(--ok);box-shadow:0 0 0 4px rgba(62,207,142,.22)}
+.status.closed::before{background:var(--err)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--gold-t);font-weight:600}
+.map{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+[data-theme="light"] .map iframe{filter:none}
+
+@media(max-width:960px){
+ .loc-grid{grid-template-columns:1fr}
+}
+/* [/P3-3] */
+
+/* [P3-4] Footer y botón flotante de WhatsApp */
+footer{padding:64px 0 28px;border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.foot p{color:var(--muted);margin-top:10px;max-width:34ch;font-size:.96rem}
+.foot h4{font-size:1.3rem;margin-bottom:12px;color:var(--gold-t)}
+.foot li{margin-bottom:6px}
+.foot li a{color:var(--muted);transition:color .2s}
+.foot li a:hover{color:var(--gold-t)}
+.social{display:flex;gap:12px}
+.social a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:background .25s,border-color .25s,transform .25s}
+.social a:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
+.social a:hover svg{fill:var(--on-gold)}
+.social svg{width:19px;height:19px;fill:var(--text)}
+.copy{text-align:center;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);padding-top:24px}
+
+.wa{position:fixed;right:20px;bottom:20px;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;z-index:60;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .25s;animation:pulse 2.4s infinite}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:34px;height:34px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+@media(max-width:960px){
+ .foot{grid-template-columns:1fr 1fr}
+ .foot>div:first-child{grid-column:1/-1}
+}
+@media(max-width:720px){
+ .foot{grid-template-columns:1fr}
+ .wa{width:56px;height:56px;right:14px;bottom:14px}
+}
+/* [/P3-4] */

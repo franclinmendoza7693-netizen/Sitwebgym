@@ -1,0 +1,169 @@
+/* ==========================================================
+   base.css  ·  PERSONA 1
+   Variables, reset, botones, header, portada, IMC y extras
+   ========================================================== */
+
+/* [P1-0] Base: variables, tema claro, reset, botones y formularios */
+:root{
+ --bg:#0a0a0a;--bg2:#121212;--card:#181818;--line:#2a2a2a;
+ --text:#f4f4f4;--muted:#a6a6a6;
+ --gold:#f5c518;--gold2:#ffdf5e;--gold-t:#f5c518;--on-gold:#000;
+ --wa:#25d366;--ok:#3ecf8e;--err:#ff6b6b;
+ --glass:rgba(10,10,10,.82);
+ --hero-a:rgba(10,10,10,.95);--hero-b:rgba(10,10,10,.5);--hero-p:#d4d4d4;
+ --shadow:0 18px 44px rgba(245,197,24,.12);
+ --r:10px;
+}
+[data-theme="light"]{
+ --bg:#fbfaf6;--bg2:#f1eee4;--card:#ffffff;--line:#ddd8c8;
+ --text:#17160f;--muted:#5c5a50;
+ --gold:#e0a800;--gold2:#f2bb12;--gold-t:#8a5d00;--on-gold:#000;
+ --ok:#12805a;--err:#b42318;
+ --glass:rgba(251,250,246,.85);
+ --hero-a:rgba(251,250,246,.94);--hero-b:rgba(251,250,246,.55);--hero-p:#3d3b32;
+ --shadow:0 18px 44px rgba(0,0,0,.10);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',system-ui,sans-serif;line-height:1.65;font-size:17px;overflow-x:hidden;transition:background .3s,color .3s}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;line-height:1.05;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.wrap{width:min(1160px,92%);margin:auto}
+section{padding:96px 0}
+.alt{background:var(--bg2)}
+.muted{color:var(--muted)}
+.link{color:var(--gold-t);text-decoration:underline;text-underline-offset:3px}
+
+.eyebrow{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-t);font-size:.95rem;margin-bottom:10px}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin-bottom:16px}
+h2 em{font-style:normal;color:var(--gold-t)}
+.lead{color:var(--muted);max-width:60ch}
+.head{text-align:center;margin-bottom:56px}
+.head .lead{margin:auto}
+
+/* Botones */
+.btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase;padding:15px 34px;border-radius:4px;border:2px solid var(--gold);cursor:pointer;text-align:center;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn-gold{background:var(--gold);color:var(--on-gold)}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(245,197,24,.35)}
+.btn-ghost{background:transparent;color:var(--gold-t)}
+.btn-ghost:hover{background:var(--gold);color:var(--on-gold);transform:translateY(-3px);box-shadow:0 10px 28px rgba(245,197,24,.3)}
+.btn-sm{padding:8px 20px;font-size:1rem}
+
+/* Formularios (los usan IMC, planes y reserva) */
+label{display:block;font-weight:600;font-size:.95rem}
+input,select{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin-top:6px}
+input:focus,select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+@media(max-width:720px){
+ section{padding:70px 0}
+ .btn{padding:14px 26px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html{scroll-behavior:auto}
+}
+/* [/P1-0] */
+
+/* [P1-1] Header y navegación */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:background .3s}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;letter-spacing:.03em}
+.logo span{color:var(--gold-t)}
+nav ul{display:flex;align-items:center;gap:26px}
+nav a:not(.btn){color:var(--muted);font-weight:500;transition:color .2s}
+nav a:not(.btn):hover{color:var(--gold-t)}
+.nav-tools{display:flex;align-items:center;gap:4px}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;color:var(--text);cursor:pointer;border-radius:50%;transition:background .2s}
+.icon-btn:hover{background:var(--line)}
+.icon-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.i-sun{display:none}
+[data-theme="light"] .i-sun{display:block}
+[data-theme="light"] .i-moon{display:none}
+.burger{display:none}
+
+@media(max-width:900px){
+ .burger{display:grid}
+ nav{position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s,visibility .35s}
+ nav.open{max-height:460px;visibility:visible}
+ nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px 4%}
+ nav li a:not(.btn){display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+ nav li:last-child{padding:14px 0}
+ nav li .btn{display:block}
+}
+/* [/P1-1] */
+
+/* [P1-2] Portada (hero) y contadores */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;
+ background:
+  radial-gradient(circle at 88% 12%,rgba(245,197,24,.18),transparent 42%),
+  linear-gradient(90deg,var(--hero-a) 20%,var(--hero-b)),
+  linear-gradient(0deg,var(--bg),transparent 35%),
+  url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=70') center/cover}
+.hero h1{font-size:clamp(3.6rem,13vw,9.5rem);font-weight:800;text-transform:uppercase;line-height:.88;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--gold-t)}
+.hero p{margin:26px 0 38px;font-size:1.2rem;color:var(--hero-p);max-width:46ch}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .eyebrow,.hero h1,.hero p,.hero .cta{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}
+.hero p{animation-delay:.2s}
+.hero .cta{animation-delay:.38s}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.stats{display:flex;gap:44px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stats b{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;color:var(--gold-t);display:block;line-height:1}
+.stats small{color:var(--muted)}
+
+@media(max-width:720px){
+ .stats{gap:28px}
+ .hero .cta .btn{flex:1}
+}
+/* [/P1-2] */
+
+/* [P1-3] Calculadora de IMC */
+.imc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.imc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px}
+.imc-card .btn-gold{margin-top:20px;width:100%}
+.imc-err{color:var(--err);font-size:.92rem;margin-top:12px;min-height:1.3em}
+.imc-out{margin-top:14px;padding-top:24px;border-top:1px solid var(--line)}
+.imc-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.imc-num{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:800;color:var(--gold-t);line-height:1}
+.imc-cat{font-weight:700;font-size:1.2rem}
+.imc-bar{position:relative;height:10px;border-radius:99px;margin:22px 0 8px;background:linear-gradient(90deg,#4aa3ff 0 14%,#3ecf8e 14% 40%,#f5c518 40% 60%,#ff7a45 60% 100%)}
+.imc-pin{position:absolute;top:50%;left:0;width:20px;height:20px;border-radius:50%;background:var(--text);border:3px solid var(--card);transform:translate(-50%,-50%);transition:left .7s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 0 2px var(--text)}
+.imc-scale{position:relative;height:1.4em;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.imc-scale span{position:absolute;left:var(--p);transform:translateX(-50%)}
+.imc-out p{color:var(--muted);margin:16px 0 18px}
+
+@media(max-width:960px){
+ .imc-grid{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:480px){
+ .imc-card{padding:24px 20px}
+ .row{grid-template-columns:1fr}
+}
+/* [/P1-3] */
+
+/* [P1-4] Extras: progreso, volver arriba, animación al scroll y menú activo */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:70}
+.backtop{position:fixed;right:26px;bottom:96px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer;z-index:55;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,visibility .3s,background .2s,color .2s}
+.backtop.show{opacity:1;visibility:visible;transform:none}
+.backtop:hover{background:var(--gold);color:var(--on-gold)}
+.backtop svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease var(--d,0s),transform .8s ease var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+nav a.active:not(.btn){color:var(--gold-t)}
+
+@media(max-width:720px){
+ .backtop{right:20px;bottom:84px}
+}
+@media(prefers-reduced-motion:reduce){
+ .rv{opacity:1;transform:none}
+}
+/* [/P1-4] */
